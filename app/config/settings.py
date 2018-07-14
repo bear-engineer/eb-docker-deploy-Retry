@@ -17,6 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT_DIR = os.path.dirname(BASE_DIR)
 
 # ROOT
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_DIR = os.path.join(ROOT_DIR, '.secrets')
 STATIC_ROOT = os.path.join(ROOT_DIR, '.static')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
@@ -68,7 +69,9 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            TEMPLATES_DIR,
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
