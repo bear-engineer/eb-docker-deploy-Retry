@@ -2,7 +2,10 @@ from .base import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1'
+]
 
 WSGI_APPLICATION = 'config.wsgi.production.application'
 
