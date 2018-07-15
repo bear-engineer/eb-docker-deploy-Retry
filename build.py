@@ -29,7 +29,7 @@ def build_base():
 def build_dev():
     try:
         # pipenv lock로 requirements.txt 생
-        subprocess.call('pipenv lock --requirements > requirements.txt', shell=True)
+        subprocess.call('pipenv lock --requirements --dev> requirements.txt', shell=True)
 
         # docker build
         subprocess.call('docker build -t eb-docker-re:dev -f Dockerfile.dev .', shell=True)
@@ -68,6 +68,7 @@ if __name__ == '__main__':
             try:
                 mode_index = int(selected_mode) - 1
                 mode = MODES[mode_index]
+                break
             except IndexError:
                 print('번호를 입력하시오')
 
