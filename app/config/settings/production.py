@@ -22,8 +22,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
-DEFAULT_FILE_STORAGE = 'config.storage.S3DefaultStorage'
-STATICFILES_STORAGE = 'config.storage.S3StaticStorage'
+
+# S3
+DEFAULT_FILE_STORAGE = 'config.storages.S3DefaultStorage'
+STATICFILES_STORAGE = 'config.storages.S3StaticStorage'
 
 AWS_ACCESS_KEY_ID = secret['AWS_ACCESS_KEY_ID']
 AWS_SECRET_ACCESS_KEY = secret['AWS_SECRET_ACCESS_KEY']
@@ -35,5 +37,5 @@ AWS_S3_SIGNATURE_VERSION = secret['AWS_S3_SIGNATURE_VERSION']
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-
+# RDS
 DATABASES = secret['DATABASE_PRODUCTION']
