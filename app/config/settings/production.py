@@ -4,10 +4,7 @@ secret = json.load(open(os.path.join(SECRET_DIR, 'secrets.json')))
 
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1'
-]
+ALLOWED_HOSTS = secret['ALLOWED_HOSTS']
 
 # django-storages
 INSTALLED_APPS += [
