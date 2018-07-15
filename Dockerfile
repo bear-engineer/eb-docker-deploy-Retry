@@ -1,3 +1,4 @@
+# eb Deploy 를 위한 Dockerfile
 FROM            python:3.6.5-slim
 MAINTAINER      d.sehyeon@gmail.com
 
@@ -28,4 +29,5 @@ RUN             cp -f   /srv/project/.config/${BUILD_MODE}/nginx.conf \
 RUN             cp -f   /srv/project/.config/${BUILD_MODE}/supervisor_app.conf \
                         /etc/supervisor/conf.d/
 
+EXPOSE          7000
 CMD             supervisord -n
