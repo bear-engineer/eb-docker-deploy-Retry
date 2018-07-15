@@ -1,0 +1,11 @@
+FROM            python:3.6.5-slim
+MAINTAINER      d.sehyeon@gmail.com
+
+RUN             apt -y update && apt -y dist-upgrade
+RUN             apt -y install python-setuptools build-essential
+RUN             apt -y install nginx supervisor
+
+
+# local requirements.txt file 을 /srv 에 복사 후 pip install 실행
+COPY            ./requirements.txt  /srv/
+RUN             pip install -r /srv/requirements.txt
