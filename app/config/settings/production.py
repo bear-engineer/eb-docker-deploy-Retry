@@ -1,3 +1,4 @@
+import sys
 from .base import *
 # 배포용 Setting
 secret = json.load(open(os.path.join(SECRET_DIR, 'secrets.json')))
@@ -5,6 +6,14 @@ secret = json.load(open(os.path.join(SECRET_DIR, 'secrets.json')))
 DEBUG = False
 
 ALLOWED_HOSTS = secret['ALLOWED_HOSTS']
+
+if sys.argv[1] == 'runserver':
+    DEBUG = True
+    ALLOWED_HOSTS = [
+        'localhost',
+        '127.0.0.1'
+    ]
+
 
 # django-storages
 INSTALLED_APPS += [
