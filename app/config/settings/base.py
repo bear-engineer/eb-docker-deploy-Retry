@@ -18,6 +18,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRET_DIR = os.path.join(ROOT_DIR, '.secrets')
+STATIC_ROOT = os.path.join(ROOT_DIR, '.static')
 
 # ROOT
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')

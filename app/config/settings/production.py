@@ -24,7 +24,6 @@ INSTALLED_APPS += [
 
 WSGI_APPLICATION = 'config.wsgi.production.application'
 
-STATIC_ROOT = os.path.join(ROOT_DIR, '.static')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
@@ -33,7 +32,7 @@ STATICFILES_DIRS = [
 
 # S3
 DEFAULT_FILE_STORAGE = 'config.storages.S3DefaultStorage'
-STATICFILES_STORAGE = 'config.storages.S3StaticStorage'
+# STATICFILES_STORAGE = 'config.storages.S3StaticStorage'
 
 AWS_ACCESS_KEY_ID = secret['AWS_ACCESS_KEY_ID']
 AWS_SECRET_ACCESS_KEY = secret['AWS_SECRET_ACCESS_KEY']
