@@ -5,9 +5,11 @@ secret = json.load(open(os.path.join(SECRET_DIR, 'secrets.json')))
 
 DEBUG = False
 
+# django가 runserver 로 켜졌는지 확인
 ALLOWED_HOSTS = secret['ALLOWED_HOSTS']
-
-if sys.argv[1] == 'runserver':
+RUNSERVER = sys.argv[1] == 'runserver'
+# runserver 로 production환경을 실행할 경우
+if RUNSERVER:
     DEBUG = True
     ALLOWED_HOSTS = [
         'localhost',
