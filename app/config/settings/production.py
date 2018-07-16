@@ -7,7 +7,7 @@ DEBUG = False
 
 # django가 runserver 로 켜졌는지 확인
 ALLOWED_HOSTS = secret['ALLOWED_HOSTS']
-RUNSERVER = sys.argv[1] == 'runserver'
+RUNSERVER = 'runserver' in sys.argv
 # runserver 로 production환경을 실행할 경우
 if RUNSERVER:
     DEBUG = True
