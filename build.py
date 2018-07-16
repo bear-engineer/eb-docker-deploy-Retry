@@ -44,6 +44,11 @@ def build_production():
 
         # docker build
         subprocess.call('docker build -t eb-docker-re:production -f Dockerfile.production .', shell=True)
+        # root = '/var/log/django'
+        # if root:
+        #     return True
+        # else:
+        #     subprocess.call('mkdir /var/log/djnago', shell=True)
     finally:
         # build 종료 후 requirements.txt 파일 삭제
         os.remove('requirements.txt')
